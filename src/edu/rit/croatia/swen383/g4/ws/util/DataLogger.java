@@ -36,12 +36,12 @@ public class DataLogger {
      */
     public void logData(EnumMap<MeasurementUnit, Double> data) throws IOException {
         String formattedDate = dateFormatter.format(new Date());
-        writer.write(formattedDate);  // write the formatted timestamp
+        writer.write(formattedDate);  
         for (MeasurementUnit unit : MeasurementUnit.values()) {
-            writer.write(", " + String.format("%.2f", data.get(unit)));  // write each measurement
+            writer.write(", " + String.format("%.2f", data.get(unit))); 
         }
-        writer.newLine();  // move to the next line after finishing this entry
-        writer.flush();  // ensure data is written to the file immediately
+        writer.newLine();  
+        writer.flush();  
     }
 
     /**

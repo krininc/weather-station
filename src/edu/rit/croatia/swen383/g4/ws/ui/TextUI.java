@@ -18,7 +18,7 @@ public class TextUI implements Observer {
      */
     public TextUI(WeatherStation ws) {
         this.ws = ws;
-        ws.attach(this);  // Attach this UI as an observer to the WeatherStation
+        ws.attach(this); 
     }
 
     /**

@@ -8,7 +8,7 @@ import edu.rit.marasovic.swen383.thirdparty.sensor.HumidityReader;
  * a humidity sensor.
  */
 public class HumiditySensor implements Sensor {
-    private HumidityReader reader = new HumidityReader(); // The sensor hardware interface
+    private HumidityReader reader = new HumidityReader();
 
     /**
      * Constructs a HumiditySensor object.
@@ -23,6 +23,6 @@ public class HumiditySensor implements Sensor {
      */
     @Override
     public int read() {
-        return reader.get();  // Return the humidity level read from the sensor
+        return reader.get(); 
     }
 }

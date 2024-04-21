@@ -8,13 +8,13 @@ import java.util.Random;
  * the limits, mimicking natural fluctuations in atmospheric pressure.
  */
 public class PressureSensor implements Sensor {
-    private static final int MIN = 950;       // Minimum pressure value (millibars)
-    private static final int MAX = 1050;      // Maximum pressure value (millibars)
-    private static final int DEFAULT = 1013;  // Default starting pressure value (millibars)
+    private static final int MIN = 950;       
+    private static final int MAX = 1050;      
+    private static final int DEFAULT = 1013;  
 
-    private int currentPressure;  // Current simulated pressure
-    private boolean increasing = true;  // Direction of pressure change, true if increasing
-    private Random rand = new Random();  // Random number generator for pressure fluctuation
+    private int currentPressure;  
+    private boolean increasing = true;  
+    private Random rand = new Random();  
 
     /**
      * Constructs a PressureSensor and initializes the current pressure to the default value.
@@ -32,7 +32,7 @@ public class PressureSensor implements Sensor {
      */
     @Override
     public int read() {
-        // Determine if pressure should start increasing or decreasing at the boundaries
+     
         if (currentPressure <= MIN) {
             increasing = true;
         } else if (currentPressure >= MAX) {
@@ -41,12 +41,12 @@ public class PressureSensor implements Sensor {
 
         // Apply a random change to the current pressure, direction based on the 'increasing' flag
         if (increasing) {
-            currentPressure += rand.nextInt(10);  // Increment pressure randomly between 0 and 9
+            currentPressure += rand.nextInt(10);  
         } else {
-            currentPressure -= rand.nextInt(10);  // Decrement pressure randomly between 0 and 9
+            currentPressure -= rand.nextInt(10); 
         }
 
-        // Ensure the new pressure does not exceed defined boundaries
+      
         currentPressure = Math.min(MAX, currentPressure);
         currentPressure = Math.max(MIN, currentPressure);
 

@@ -22,9 +22,9 @@ import java.io.IOException;
  * from a WeatherStation object and exporting these readings to CSV or JSON formats.
  */
 public class SwingUI extends JFrame implements Observer {
-    private EnumMap<MeasurementUnit, JLabel> temperatureLabels; // Holds JLabels for each MeasurementUnit
-    private WeatherStation ws; // Associated WeatherStation object
-    private static final Font labelFont = new Font(Font.SERIF, Font.PLAIN, 46); // Font for JLabels
+    private EnumMap<MeasurementUnit, JLabel> temperatureLabels; 
+    private WeatherStation ws; 
+    private static final Font labelFont = new Font(Font.SERIF, Font.PLAIN, 46); 
 
     /**
      * Constructs a SwingUI object associated with a WeatherStation.
@@ -54,7 +54,7 @@ public class SwingUI extends JFrame implements Observer {
      * Initializes the UI components.
      */
     public void initializeUIComponents() {
-        setLayout(new GridLayout(1, 0));  // One row, variable number of columns
+        setLayout(new GridLayout(1, 0));  
         temperatureLabels = new EnumMap<>(MeasurementUnit.class);
         
         for (MeasurementUnit unit : MeasurementUnit.values()) {
@@ -107,7 +107,7 @@ public class SwingUI extends JFrame implements Observer {
         buttonPanel.add(exportCSVButton);
         buttonPanel.add(exportJSONButton);
 
-        getContentPane().add(buttonPanel, BorderLayout.SOUTH);  // Add buttons at the bottom of the frame
+        getContentPane().add(buttonPanel, BorderLayout.SOUTH);  
     }
 
     /**
@@ -117,8 +117,8 @@ public class SwingUI extends JFrame implements Observer {
      */
     private void exportData(String format) {
         try {
-            String logFilePath = "logfile.txt";  // Path to the log file
-            String exportPath = "logfile." + format.toLowerCase();  // Path for the exported file
+            String logFilePath = "logfile.txt";  
+            String exportPath = "logfile." + format.toLowerCase();  
 
             if ("CSV".equals(format)) {
                 DataExporter.exportAsCSV(logFilePath, exportPath);

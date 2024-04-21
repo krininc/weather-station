@@ -16,8 +16,8 @@ public enum MeasurementUnit {
     PCT(SensorType.HUMIDITY, 100, 0);
 
     private final SensorType type;
-    private final double cf1;  // Conversion factor 1
-    private final double cf2;  // Conversion factor 2 (offset)
+    private final double cf1;  
+    private final double cf2;  
 
     /**
      * Constructs a MeasurementUnit with specified sensor type and conversion factors.
